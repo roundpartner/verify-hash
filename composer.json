@@ -1,0 +1,12 @@
+{
+  "name": "roundpartner/verifyhash",
+  "description": "Library for verifying hashes",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tom Lorentsen",
+      "email": "tom@thomaslorentsen.co.uk"
+    }
+  ]
+}
