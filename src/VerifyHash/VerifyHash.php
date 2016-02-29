@@ -7,13 +7,26 @@ class VerifyHash
 
     const DEFAULT_ALGORITHM = 'sha1';
 
+    /**
+     * @var string
+     */
     protected $secret;
 
+    /**
+     * VerifyHash constructor.
+     *
+     * @param $secret
+     */
     public function __construct($secret)
     {
         $this->secret = $secret;
     }
 
+    /**
+     * @param string$content
+     * @param string $algorithm
+     * @return bool|string
+     */
     public function hash($content, $algorithm = self::DEFAULT_ALGORITHM)
     {
         if (!is_string($content)) {
@@ -27,6 +40,12 @@ class VerifyHash
         return hash_hmac($algorithm, $content, $this->secret);
     }
 
+    /**
+     * @param string $hash
+     * @param string $content
+     * @param string $algorithm
+     * @return bool
+     */
     public function verify($hash, $content, $algorithm = self::DEFAULT_ALGORITHM)
     {
         if (empty($hash)) {
