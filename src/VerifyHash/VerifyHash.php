@@ -29,6 +29,9 @@ class VerifyHash
 
     public function verify($hash, $content, $algorithm = self::DEFAULT_ALGORITHM)
     {
+        if (empty($hash)) {
+            return false;
+        }
         return $this->hashEquals($hash, $this->hash($content, $algorithm));
     }
 
