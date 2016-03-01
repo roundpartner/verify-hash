@@ -15,7 +15,7 @@ class VerifyHash
     /**
      * VerifyHash constructor.
      *
-     * @param $secret
+     * @param string $secret
      */
     public function __construct($secret)
     {
@@ -23,8 +23,11 @@ class VerifyHash
     }
 
     /**
-     * @param string$content
+     * Creates a hash from the content and secret
+     *
+     * @param string $content
      * @param string $algorithm
+     *
      * @return bool|string
      */
     public function hash($content, $algorithm = self::DEFAULT_ALGORITHM)
@@ -41,9 +44,12 @@ class VerifyHash
     }
 
     /**
+     * Verifies that content and hash match
+     *
      * @param string $hash
      * @param string $content
      * @param string $algorithm
+     *
      * @return bool
      */
     public function verify($hash, $content, $algorithm = self::DEFAULT_ALGORITHM)
@@ -57,8 +63,9 @@ class VerifyHash
     /**
      * String comparison for hashes
      *
-     * @param $knownString
-     * @param $userString
+     * @param string $knownString
+     * @param string $userString
+     *
      * @return bool
      */
     private function hashEquals($knownString, $userString)

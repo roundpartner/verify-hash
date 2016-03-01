@@ -14,6 +14,11 @@
       "VerifyHash": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-0": {
+      "Providers": "tests/"
+    }
+  },
   "require-dev": {
     "phpunit/phpunit": "^4.8"
   }

@@ -3,22 +3,22 @@
 class VerifyHashTest extends PHPUnit_Framework_TestCase
 {
 
-    public function testHash()
+    /**
+     * @dataProvider \Providers\HashProvider::hashProvider()
+     */
+    public function testHash($hash, $content)
     {
         $verifyHash = new \VerifyHash\VerifyHash('reallysecurestring');
-        $this->assertEquals('dc91e632a81bba220a002d46e06da80dc2753591', $verifyHash->hash('This is a string I want to hash'));
+        $this->assertEquals($hash, $verifyHash->hash($content));
     }
 
-    public function testVerify()
+    /**
+     * @dataProvider \Providers\HashProvider::hashVerifyProvider()
+     */
+    public function testVerify($hash, $content, $expected)
     {
         $verifyHash = new \VerifyHash\VerifyHash('reallysecurestring');
-        $this->assertTrue($verifyHash->verify('dc91e632a81bba220a002d46e06da80dc2753591', 'This is a string I want to hash'));
-    }
-
-    public function testVerifyFalse()
-    {
-        $verifyHash = new \VerifyHash\VerifyHash('reallysecurestring');
-        $this->assertFalse($verifyHash->verify(false, false));
+        $this->assertEquals($expected, $verifyHash->verify($hash, $content));
     }
 
 }
