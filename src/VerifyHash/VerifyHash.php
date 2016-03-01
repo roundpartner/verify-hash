@@ -1,6 +1,6 @@
 <?php
 
-namespace VerifyHash;
+namespace RoundPartner\VerifyHash;
 
 class VerifyHash
 {
