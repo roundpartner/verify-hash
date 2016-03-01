@@ -1,6 +1,6 @@
 <?php
 
-namespace Providers;
+namespace RoundPartner\Providers;
 
 class HashProvider
 {

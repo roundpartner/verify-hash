@@ -4,7 +4,7 @@ class VerifyHashTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @dataProvider \Providers\HashProvider::hashProvider()
+     * @dataProvider \RoundPartner\Providers\HashProvider::hashProvider()
      */
     public function testHash($hash, $content)
     {
@@ -13,7 +13,7 @@ class VerifyHashTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider \Providers\HashProvider::hashVerifyProvider()
+     * @dataProvider \RoundPartner\Providers\HashProvider::hashVerifyProvider()
      */
     public function testVerify($hash, $content, $expected)
     {
