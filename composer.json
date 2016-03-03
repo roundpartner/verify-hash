@@ -1,5 +1,5 @@
 {
-  "name": "roundpartner/verifyhash",
+  "name": "roundpartner/verify-hash",
   "description": "Library for verifying hashes",
   "minimum-stability": "stable",
   "license": "proprietary",
