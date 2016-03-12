@@ -9,12 +9,32 @@ class VerifyHashTest extends \PHPUnit_Framework_TestCase
     const SECRET_STRING = 'this is my secret';
 
     /**
+     * @var VerifyHash
+     */
+    protected $verifyHash;
+
+
+    public function setUp()
+    {
+        $this->verifyHash = new VerifyHash(self::SECRET_STRING);
+    }
+
+    /**
      * @dataProvider \RoundPartner\Providers\HashProvider::hashProvider()
      */
     public function testHash($hash, $content)
     {
-        $verifyHash = new VerifyHash(self::SECRET_STRING);
-        $this->assertEquals($hash, $verifyHash->hash($content));
+        $this->assertEquals($hash, $this->verifyHash->hash($content));
+    }
+
+    public function testHashNotString()
+    {
+        $this->assertFalse($this->verifyHash->hash(true));
+    }
+
+    public function testHashAlgorithmDoesNotExist()
+    {
+        $this->assertFalse($this->verifyHash->hash(self::SECRET_STRING, 'test'));
     }
 
     /**
@@ -22,7 +42,6 @@ class VerifyHashTest extends \PHPUnit_Framework_TestCase
      */
     public function testVerify($hash, $content, $expected)
     {
-        $verifyHash = new VerifyHash(self::SECRET_STRING);
-        $this->assertEquals($expected, $verifyHash->verify($hash, $content));
+        $this->assertEquals($expected, $this->verifyHash->verify($hash, $content));
     }
 }
