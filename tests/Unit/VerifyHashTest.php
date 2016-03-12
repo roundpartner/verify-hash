@@ -1,6 +1,10 @@
 <?php
 
-class VerifyHashTest extends PHPUnit_Framework_TestCase
+namespace RoundPartner\Unit;
+
+use \RoundPartner\VerifyHash\VerifyHash;
+
+class VerifyHashTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -8,7 +12,7 @@ class VerifyHashTest extends PHPUnit_Framework_TestCase
      */
     public function testHash($hash, $content)
     {
-        $verifyHash = new RoundPartner\VerifyHash\VerifyHash('reallysecurestring');
+        $verifyHash = new VerifyHash('reallysecurestring');
         $this->assertEquals($hash, $verifyHash->hash($content));
     }
 
@@ -17,8 +21,7 @@ class VerifyHashTest extends PHPUnit_Framework_TestCase
      */
     public function testVerify($hash, $content, $expected)
     {
-        $verifyHash = new RoundPartner\VerifyHash\VerifyHash('reallysecurestring');
+        $verifyHash = new VerifyHash('reallysecurestring');
         $this->assertEquals($expected, $verifyHash->verify($hash, $content));
     }
-
 }
