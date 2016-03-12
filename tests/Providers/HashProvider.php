@@ -7,18 +7,18 @@ class HashProvider
     public static function hashProvider()
     {
         return array(
-            ['dc91e632a81bba220a002d46e06da80dc2753591', 'This is a string I want to hash'],
+            ['e6e83f12b09a0684979efc4a6de98e10f64a6ee7', 'This is a string I want to hash'],
         );
     }
 
     public static function hashVerifyProvider()
     {
         return array(
-            ['dc91e632a81bba220a002d46e06da80dc2753591', 'This is a string I want to hash', true],
+            ['e6e83f12b09a0684979efc4a6de98e10f64a6ee7', 'This is a string I want to hash', true],
             [false, false, false],
             ['', '', false],
             ['', false, false],
-            ['dc91e632a81bba220a002d46e06da80dc2753591', 'This is invalid', false],
+            ['e6e83f12b09a0684979efc4a6de98e10f64a6ee7', 'This is invalid', false],
         );
     }
 }
