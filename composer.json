@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "RoundPartner\\": "src/"
+      "RoundPartner\\VerifyHash\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "RoundPartner\\": "tests/"
+      "RoundPartner\\Test\\": "tests/"
     }
   },
   "require-dev": {

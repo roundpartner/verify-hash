@@ -1,6 +1,6 @@
 <?php
 
-namespace RoundPartner\Unit;
+namespace RoundPartner\Test\Unit;
 
 use \RoundPartner\VerifyHash\VerifyHash;
 
@@ -20,7 +20,7 @@ class VerifyHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider \RoundPartner\Providers\HashProvider::hashProvider()
+     * @dataProvider \RoundPartner\Test\Providers\HashProvider::hashProvider()
      */
     public function testHash($hash, $content)
     {
@@ -38,7 +38,7 @@ class VerifyHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider \RoundPartner\Providers\HashProvider::hashVerifyProvider()
+     * @dataProvider \RoundPartner\Test\Providers\HashProvider::hashVerifyProvider()
      */
     public function testVerify($hash, $content, $expected)
     {
