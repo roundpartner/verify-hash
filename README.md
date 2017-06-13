@@ -1,9 +1,9 @@
-# verifyhash
+[![Build Status](https://travis-ci.org/roundpartner/verify-hash.svg?branch=master)](https://travis-ci.org/roundpartner/verify-hash)
+# Verify Hash
 Library for verifying hashes
 
 ## Testing
 ```bash
-cd tests
 phpunit
 ```
 
